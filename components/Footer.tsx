@@ -54,77 +54,7 @@ export function FooterImpl() {
       </div>
 
       <div className={styles.social}>
-        {config.twitter && (
-          <a
-            className={styles.twitter}
-            href={`https://twitter.com/${config.twitter}`}
-            title={`Twitter @${config.twitter}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaTwitter />
-          </a>
-        )}
-
-        {config.mastodon && (
-          <a
-            className={styles.mastodon}
-            href={config.mastodon}
-            title={`Mastodon ${config.getMastodonHandle()}`}
-            rel='me'
-          >
-            <FaMastodon />
-          </a>
-        )}
-
-        {config.zhihu && (
-          <a
-            className={styles.zhihu}
-            href={`https://zhihu.com/people/${config.zhihu}`}
-            title={`Zhihu @${config.zhihu}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaZhihu />
-          </a>
-        )}
-
-        {config.github && (
-          <a
-            className={styles.github}
-            href={`https://github.com/${config.github}`}
-            title={`GitHub @${config.github}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaGithub />
-          </a>
-        )}
-
-        {config.linkedin && (
-          <a
-            className={styles.linkedin}
-            href={`https://www.linkedin.com/in/${config.linkedin}`}
-            title={`LinkedIn ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaLinkedin />
-          </a>
-        )}
-
-        {config.newsletter && (
-          <a
-            className={styles.newsletter}
-            href={`${config.newsletter}`}
-            title={`Newsletter ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaEnvelopeOpenText />
-          </a>
-        )}
-
+        
         {config.youtube && (
           <a
             className={styles.youtube}
