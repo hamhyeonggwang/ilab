@@ -1,68 +1,44 @@
-import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
+import * as React from 'react'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import * as React from 'react'
+import cs from 'classnames'
 
-import * as config from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
-
 import styles from './styles.module.css'
 
-// TODO: merge the data and icons from PageSocial with the social links in Footer
-
-export function FooterImpl() {
+function ToggleThemeButton() {
   const [hasMounted, setHasMounted] = React.useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
-  const currentYear = new Date().getFullYear()
-
-  const onToggleDarkMode = React.useCallback(
-    (e: any) => {
-      e.preventDefault()
-      toggleDarkMode()
-    },
-    [toggleDarkMode]
-  )
 
   React.useEffect(() => {
     setHasMounted(true)
   }, [])
 
+  const onToggleTheme = React.useCallback(() => {
+    toggleDarkMode()
+  }, [toggleDarkMode])
+
+  return (
+    <button
+      className={cs(styles.themeToggle, !hasMounted && styles.hidden)}
+      onClick={onToggleTheme}
+      aria-label='Toggle dark mode'
+    >
+      {hasMounted && isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+    </button>
+  )
+}
+
+export const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.copyright}>
-        Copyright {currentYear} {config.author}
+        Copyright {new Date().getFullYear()} I.Lab
       </div>
 
       <div className={styles.settings}>
-        {hasMounted && (
-          <a
-            className={styles.toggleDarkMode}
-            href='#'
-            role='button'
-            onClick={onToggleDarkMode}
-            title='Toggle dark mode'
-          >
-            {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
-          </a>
-        )}
-      </div>
-
-      <div className={styles.social}>
-        
-        {config.youtube && (
-          <a
-            className={styles.youtube}
-            href={`https://www.youtube.com/${config.youtube}`}
-            title={`YouTube ${config.author}`}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <FaYoutube />
-          </a>
-        )}
+        <ToggleThemeButton />
       </div>
     </footer>
   )
 }
-
-export const Footer = React.memo(FooterImpl)
