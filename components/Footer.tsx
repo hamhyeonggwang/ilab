@@ -1,7 +1,7 @@
 import * as React from 'react'
+import cs from 'classnames'
 import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
 import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
-import cs from 'classnames'
 
 import { useDarkMode } from '@/lib/use-dark-mode'
 import styles from './styles.module.css'

@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'I.Lab',
-  domain: 'i-lab.vercel.app',
+  domain: 'i-lab.ai.kr',
   author: '함형광',
 
   // open graph metadata (optional)
