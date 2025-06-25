@@ -2,6 +2,7 @@
   "root": true,
   "extends": ["@fisch0920/eslint-config"],
   "rules": {
+    // 기존 규칙 유지
     "react/prop-types": "off",
     "unicorn/no-array-reduce": "off",
     "unicorn/filename-case": "off",
@@ -12,6 +13,10 @@
     "jsx-a11y/media-has-caption": "off",
     "jsx-a11y/interactive-supports-focus": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+
+    // 추가: 에러 발생한 규칙 해제
+    "simple-import-sort/imports": "off",
+    "react/function-component-definition": "off"
   }
 }

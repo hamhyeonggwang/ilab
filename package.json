@@ -46,6 +46,7 @@
     "notion-utils": "^7.4.2",
     "p-map": "^7.0.3",
     "p-memoize": "^7.1.1",
+    "pnpm": "^10.12.3",
     "posthog-js": "^1.249.4",
     "prismjs": "^1.30.0",
     "react": "^19.1.0",
